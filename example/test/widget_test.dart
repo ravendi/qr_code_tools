@@ -8,7 +8,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:qr_code_tools_example/main.dart';
+import '../lib/main.dart';
+
 
 void main() {
   testWidgets('QR Code Decode', (WidgetTester tester) async {
@@ -19,7 +20,7 @@ void main() {
     expect(
       find.byWidgetPredicate(
         (Widget widget) => widget is Text &&
-                           widget.data.startsWith('Qr Code data:'),
+                           widget.data!.startsWith('Qr Code data:'),
       ),
       findsOneWidget,
     );
